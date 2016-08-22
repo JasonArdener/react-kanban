@@ -32,21 +32,21 @@ gulp.task('webpack', function() {
             module: {
                 loaders: [
                     {
+                        test: /\.jsx?$/,
                         exclude: /(node_modules|bower_components)/,
                         loader: 'babel',
-                        query:
-                          {
-                            presets:['es2015']
-                          }
+                        query: {
+                            presets: ['es2015', 'react']
+                        }
+                    },
+                    {   
+                        test: require.resolve("react"), 
+                        loader: "expose?React" 
                     }
                 ]
             },
             resolve: {
-                extensions: ['', '.js']
-            },
-            externals: {
-                $: "jquery",
-                jQuery: "jquery"
+                extensions: ['', '.js', '.jsx']
             }
         }))
         .pipe(rename('app.js'))
@@ -82,10 +82,11 @@ gulp.task('compass', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('assets/css/**/*.scss', ['compass']);
-    gulp.watch(['assets/js/components/**/*', 'assets/js/app.js'], ['webpack', 'webpack:tests', 'tests']);
-    gulp.watch(['assets/js/app.spec.js'], ['webpack:tests']);
-    gulp.watch(['assets/js/build/app.spec.js'], ['tests']);
+    gulp.watch(['assets/js/components/**/*', 'assets/js/app.js'], ['webpack']);
+    // gulp.watch(['assets/js/app.spec.js'], ['webpack:tests']);
+    // gulp.watch(['assets/js/build/app.spec.js'], ['tests']);
 });
 
 // Default Task
-gulp.task('default', ['compass', 'webpack', 'webpack:tests', 'tests', 'watch']); 
+gulp.task('default', ['compass', 'webpack',  'watch']); 
+//'webpack:tests', 'tests',

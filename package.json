@@ -2,10 +2,11 @@
   "name": "Template",
   "version": "1.2.0",
   "devDependencies": {
+    "babel": "^6.5.2",
     "babel-core": "^6.3.26",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.3.13",
     "browser-sync": "^2.9.3",
     "expose-loader": "^0.7.0",
@@ -22,19 +23,20 @@
     "gulp-watch": "*",
     "gulp-webpack": "^1.5.0",
     "jasmine-core": "^2.4.1",
+    "jsx-loader": "^0.13.2",
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
     "karma-jasmine-html-reporter": "^0.2.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "webpack": "^1.11.0"
   },
   "author": "Jason Ardener",
   "dependencies": {
     "jquery": "^2.1.4",
     "jsx-loader": "^0.13.2",
-    "react": "^0.14.0",
+    "react": "^0.14.7",
     "react-dom": "^0.14.0"
   }
 }
